@@ -25,16 +25,17 @@ export default class Apuestas extends Component {
     return (
       <div>
         <h1>Apuestas</h1>
+        <NavLink className="btn btn-warning" to="/newapuesta">Realizar Apuesta</NavLink>
         <table className='table table-bordered table-warning'>
             <thead>
                 <tr>
                     <th>Usuario</th>
                     <th>Resultado</th>
-                    <th>frcha</th>
+                    <th>Fecha</th>
                 </tr>
             </thead>
             <tbody>
-            {
+            {this.state.status == true &&
             this.state.apuestas.map((apu,index)=>{
                 return(<tr key={apu.idApuesta}>
                     <td>{apu.usuario}</td>
@@ -45,7 +46,7 @@ export default class Apuestas extends Component {
         }
             </tbody>
         </table>
-        <NavLink className="btn btn-warning" to="/">Realizar Apuesta</NavLink>
+       
       </div>
     )
   }
